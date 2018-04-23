@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using PeterService.Models;
 
-namespace PeterService.Services.Api
+namespace PeterService.Services
 {
     public interface IApiService
     {
         Task<List<string>> GetLangs();
-        Task<LangResultModel> Lookup(string text, string lang);
+        Task<ApiResult> Lookup(string text, string lang);
     }
 }

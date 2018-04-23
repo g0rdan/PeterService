@@ -33,7 +33,10 @@
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Services\Http\IHttpService.cs" />
     <Compile Include="Services\Api\IApiService.cs" />
-    <Compile Include="Models\LangResultModel.cs" />
+    <Compile Include="Services\Http\HttpService.cs" />
+    <Compile Include="Services\Api\ApiService.cs" />
+    <Compile Include="Models\Api\ApiResult.cs" />
+    <Compile Include="Models\Api\LangResultModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Platform">
@@ -62,6 +65,7 @@
     <Folder Include="Services\Api\" />
     <Folder Include="Services\Storage\" />
     <Folder Include="Models\" />
+    <Folder Include="Models\Api\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>

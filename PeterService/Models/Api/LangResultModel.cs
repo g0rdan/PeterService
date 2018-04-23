@@ -7,6 +7,7 @@ namespace PeterService.Services
     {
         [JsonProperty("head")]
         public Head Head { get; set; }
+        [JsonProperty("def")]
         public List<Definition> Definitions { get; set; }
     }
 
@@ -28,7 +29,7 @@ namespace PeterService.Services
 
     public class Example
     {
-        [JsonProperty("syn")]
+        [JsonProperty("text")]
         public string Text { get; set; }
         [JsonProperty("syn")]
         public List<Translate> Translates { get; set; }
