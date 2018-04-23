@@ -35,8 +35,10 @@
     <Compile Include="Services\Api\IApiService.cs" />
     <Compile Include="Services\Http\HttpService.cs" />
     <Compile Include="Services\Api\ApiService.cs" />
-    <Compile Include="Models\Api\ApiResult.cs" />
+    <Compile Include="Models\Api\TranslateApiResult.cs" />
     <Compile Include="Models\Api\LangResultModel.cs" />
+    <Compile Include="Models\Api\BaseApiResult.cs" />
+    <Compile Include="Models\Api\LangsApiResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Platform">
