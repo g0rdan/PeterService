@@ -1,0 +1,38 @@
+﻿using System.Collections.Generic;
+using System.Linq;
+using Newtonsoft.Json;
+using Plugin.Settings;
+
+namespace PeterService.Services
+{
+    public class DataService : IDataService
+    {
+        const string KEY = "peterservice";
+
+        public DataService()
+        {
+        }
+
+        public List<TranslateModel> GetSavedResults(int count = 5)
+        {
+            var currentStorageObjectString = CrossSettings.Current.GetValueOrDefault<string>(KEY, string.Empty);
+            if (!string.IsNullOrWhiteSpace(currentStorageObjectString))
+            {
+                var translateModels = JsonConvert.DeserializeObject<List<TranslateModel>>(currentStorageObjectString);
+                return translateModels.Take(count).ToList();
+            }
+            return new List<TranslateModel>();
+        }
+
+        public void Save(TranslateModel model)
+        {
+            List<TranslateModel> translateModels = new List<TranslateModel>();
+            var currentStorageObjectString = CrossSettings.Current.GetValueOrDefault<string>(KEY, string.Empty);
+            if (!string.IsNullOrWhiteSpace(currentStorageObjectString))
+                translateModels = JsonConvert.DeserializeObject<List<TranslateModel>>(currentStorageObjectString);
+            
+            translateModels.Add(model);
+            CrossSettings.Current.AddOrUpdateValue<string>(KEY, JsonConvert.SerializeObject(translateModels));
+        }
+    }
+}
