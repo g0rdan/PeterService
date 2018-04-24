@@ -1,18 +1,78 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703" />
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainView">
             <connections>
-                <outlet property="view" destination="2" id="RRd-Eg-VrN" />
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+                <outlet property="HistoryButton" destination="1173" id="name-outlet-1173"/>
+                <outlet property="DirectionButton" destination="2303" id="name-outlet-2303"/>
+                <outlet property="TranslateButton" destination="2304" id="name-outlet-2304"/>
+                <outlet property="OutputLabel" destination="2311" id="name-outlet-2311"/>
+                <outlet property="InputTextView" destination="1752" id="name-outlet-1752"/>
             </connections>
         </placeholder>
-        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder" />
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="2">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600" />
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite" />
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1173" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                    <rect key="frame" x="159" y="530" width="153" height="30"/>
+                    <state key="normal" title="История переводов"/>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" borderStyle="roundedRect" minimumFontSize="17" id="1752" translatesAutoresizingMaskIntoConstraints="NO">
+                    <rect key="frame" x="8" y="80" width="304" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2303" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                    <rect key="frame" x="8" y="118" width="143" height="30"/>
+                    <state key="normal" title="Направление перевода"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2304" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                    <rect key="frame" x="174" y="118" width="138" height="30"/>
+                    <state key="normal" title="Перевести"/>
+                    <constraints>
+                        <constraint id="2310" firstItem="2304" firstAttribute="width" constant="112"/>
+                    </constraints>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2311" translatesAutoresizingMaskIntoConstraints="NO">
+                    <rect key="frame" x="8" y="156" width="304" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                    <constraints>
+                        <constraint id="2494" firstItem="2311" firstAttribute="height" constant="36"/>
+                    </constraints>
+                    <color key="backgroundColor" colorSpace="calibratedRGB" red="0.6" green="0.4" blue="0.2" alpha="1"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <point key="canvasLocation" x="78" y="32"/>
+            <constraints>
+                <constraint id="1174" firstItem="2" firstAttribute="bottom" secondItem="1173" secondAttribute="bottom" constant="8"/>
+                <constraint id="1175" firstItem="2" firstAttribute="trailing" secondItem="1173" secondAttribute="trailing" constant="8"/>
+                <constraint id="1753" firstItem="1752" firstAttribute="centerX" secondItem="2" secondAttribute="centerX"/>
+                <constraint id="1754" firstItem="1752" firstAttribute="top" secondItem="2" secondAttribute="top" constant="80"/>
+                <constraint id="1755" firstItem="1752" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="8"/>
+                <constraint id="1756" firstItem="2" firstAttribute="trailing" secondItem="1752" secondAttribute="trailing" constant="8"/>
+                <constraint id="2305" firstItem="2303" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="8"/>
+                <constraint id="2306" firstItem="2303" firstAttribute="top" secondItem="1752" secondAttribute="bottom" constant="8"/>
+                <constraint id="2308" firstItem="2304" firstAttribute="top" secondItem="1752" secondAttribute="bottom" constant="8"/>
+                <constraint id="2309" firstItem="2" firstAttribute="trailing" secondItem="2304" secondAttribute="trailing" constant="8"/>
+                <constraint id="2330" firstItem="2311" firstAttribute="top" secondItem="2303" secondAttribute="bottom" constant="8"/>
+                <constraint id="2492" firstItem="2311" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="8"/>
+                <constraint id="2493" firstItem="2" firstAttribute="trailing" secondItem="2311" secondAttribute="trailing" constant="8"/>
+            </constraints>
         </view>
     </objects>
 </document>

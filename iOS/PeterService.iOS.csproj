@@ -129,6 +129,8 @@
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Views\MainView.xib" />
+    <InterfaceDefinition Include="Views\LangDirectionView.xib" />
+    <InterfaceDefinition Include="Views\HistoryView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -144,6 +146,14 @@
     <Compile Include="Setup.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="Views\LangDirectionView.cs" />
+    <Compile Include="Views\LangDirectionView.designer.cs">
+      <DependentUpon>LangDirectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HistoryView.cs" />
+    <Compile Include="Views\HistoryView.designer.cs">
+      <DependentUpon>HistoryView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
