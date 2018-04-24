@@ -3,8 +3,9 @@ using Newtonsoft.Json;
 
 namespace PeterService.Services
 {
-    public class LangResultModel
+    public class TranslateModel
     {
+        public string Original { get; set; }
         [JsonProperty("head")]
         public Head Head { get; set; }
         [JsonProperty("def")]

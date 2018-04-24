@@ -12,7 +12,7 @@ namespace PeterService.Services
     public class ApiService : IApiService
     {
         const string KEY = "dict.1.1.20180423T132850Z.947c7ac5e86d3c2d.3e6f3702acb8ff3e1d335680293544fa65846e40";
-        const string ROUTE = "https://dictionary.yandex.net/api/v1/dicservice.json";
+        const string ROUTE_BASE = "https://dictionary.yandex.net/api/v1/dicservice.json";
         readonly IHttpService _httpService;
         readonly IMvxLog _logger;
 
@@ -26,7 +26,7 @@ namespace PeterService.Services
         {
             try
             {
-                var query = $"{ROUTE}/getLangs?key={KEY}";
+                var query = $"{ROUTE_BASE}/getLangs?key={KEY}";
                 var response = await _httpService.Get(query);
                 if (response != null && response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
@@ -51,12 +51,13 @@ namespace PeterService.Services
         {
             try
             {
-                var query = $"{ROUTE}/lookup?key={KEY}&lang={lang}&text={text}";
+                var query = $"{ROUTE_BASE}/lookup?key={KEY}&lang={lang}&text={text}";
                 var response = await _httpService.Get(query);
                 if (response != null && response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     var data = await response.Content.ReadAsStringAsync();
-                    var langResult = JsonConvert.DeserializeObject<LangResultModel>(data);
+                    var langResult = JsonConvert.DeserializeObject<TranslateModel>(data);
+                    langResult.Original = text;
                     return new TranslateApiResult { OK = true, Result = langResult };
                 }
             }
