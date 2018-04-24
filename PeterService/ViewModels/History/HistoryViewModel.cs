@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using PeterService.Services;
-using PropertyChanged;
 
 namespace PeterService.ViewModels
 {

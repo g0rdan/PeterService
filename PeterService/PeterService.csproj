@@ -40,11 +40,11 @@
     <Compile Include="Models\Api\LangsApiResult.cs" />
     <Compile Include="ViewModels\LangDirectionViewModel.cs" />
     <Compile Include="Services\Storage\IDataService.cs" />
-    <Compile Include="ViewModels\HistoryViewModel.cs" />
     <Compile Include="Models\Data\TranslateModel.cs" />
     <Compile Include="Services\Storage\DataService.cs" />
     <Compile Include="Helpers\Settings.cs" />
-    <Compile Include="ViewModels\HistoryCellViewModel.cs" />
+    <Compile Include="ViewModels\History\HistoryCellViewModel.cs" />
+    <Compile Include="ViewModels\History\HistoryViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Platform">
