@@ -44,6 +44,7 @@
     <Compile Include="Models\Data\TranslateModel.cs" />
     <Compile Include="Services\Storage\DataService.cs" />
     <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="ViewModels\HistoryCellViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Platform">
@@ -84,6 +85,7 @@
     <Folder Include="Models\" />
     <Folder Include="Models\Api\" />
     <Folder Include="Models\Data\" />
+    <Folder Include="ViewModels\History\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Fody.2.2.1.0\build\portable-net+sl+win+wpa+wp\Fody.targets" Condition="Exists('..\packages\Fody.2.2.1.0\build\portable-net+sl+win+wpa+wp\Fody.targets')" />

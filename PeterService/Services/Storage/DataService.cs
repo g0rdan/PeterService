@@ -19,14 +19,15 @@ namespace PeterService.Services
             if (!string.IsNullOrWhiteSpace(currentStorageObjectString))
             {
                 var translateModels = JsonConvert.DeserializeObject<List<TranslateModel>>(currentStorageObjectString);
-                return translateModels.Take(count).ToList();
+                if (translateModels != null && translateModels.Any())
+                    return translateModels.Take(count).Reverse().ToList();
             }
             return new List<TranslateModel>();
         }
 
         public void Save(TranslateModel model)
         {
-            List<TranslateModel> translateModels = new List<TranslateModel>();
+            var translateModels = new List<TranslateModel>();
             var currentStorageObjectString = CrossSettings.Current.GetValueOrDefault<string>(KEY, string.Empty);
             if (!string.IsNullOrWhiteSpace(currentStorageObjectString))
                 translateModels = JsonConvert.DeserializeObject<List<TranslateModel>>(currentStorageObjectString);

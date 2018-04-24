@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using PeterService.Services;
@@ -11,7 +12,7 @@ namespace PeterService.ViewModels
         readonly IMvxNavigationService _navigationService;
         readonly IDataService _dataService;
 
-        public MvxObservableCollection<string> Items { get; set; }
+        public MvxObservableCollection<HistoryCellViewModel> Items { get; set; }
         public IMvxAsyncCommand CloseViewModelCommand => new MvxAsyncCommand(async () => {
             await _navigationService.Close(this);
         });
@@ -24,9 +25,20 @@ namespace PeterService.ViewModels
 
 		public override void Prepare()
 		{
-            var savedModels = _dataService.GetSavedResults();
-            var savedStrings = savedModels.Select(x => $"{x.Original} -> {x.Definitions?.FirstOrDefault()?.Translates?.FirstOrDefault()?.Text}");
-            Items = new MvxObservableCollection<string>(savedStrings);
+            Items = new MvxObservableCollection<HistoryCellViewModel>();
+		}
+
+		public override Task Initialize()
+		{
+            var savedModels = _dataService.GetSavedResults(20);
+            if (savedModels != null && savedModels.Any())
+            {
+                var cellVMs = savedModels
+                    .Select(x => new HistoryCellViewModel { Title = $"{x.Original} -> {x.Definitions?.FirstOrDefault()?.Translates?.FirstOrDefault()?.Text}" });
+                Items.AddRange(cellVMs);
+            }
+
+            return base.Initialize();
 		}
 	}
 }
