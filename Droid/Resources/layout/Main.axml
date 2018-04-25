@@ -24,16 +24,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_weight="0.5"
                 app:MvxBind="Text LanguageFromText; Click OpenFromListCommand"
-                android:textColor="#4bacf7"
+                style="@style/button_style"
+                android:layout_weight="0.5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <Button
                 app:MvxBind="Text LanguageToText; Click OpenToListCommand"
-                style="?android:attr/borderlessButtonStyle"
-                android:textColor="#4bacf7"
+                style="@style/button_style"
                 android:layout_weight="0.5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -50,10 +48,9 @@
             android:layout_height="match_parent" />
     </LinearLayout>
     <Button
-        android:layout_gravity="bottom|left"
-        style="?android:attr/borderlessButtonStyle"
         app:MvxBind="Click OpenHistoryCommand"
-        android:textColor="#4bacf7"
+        android:layout_gravity="bottom|left"
+        style="@style/button_style"
         android:padding="15dp"
         android:text="Посмотреть историю"
         android:layout_width="wrap_content"

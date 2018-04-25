@@ -6104,6 +6104,9 @@ namespace PeterService.Droid
 			// aapt resource value: 0x7f0b0179
 			public const int Widget_Design_TextInputLayout = 2131427705;
 			
+			// aapt resource value: 0x7f0b017b
+			public const int button_style = 2131427707;
+			
 			static Style()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

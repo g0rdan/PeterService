@@ -6,6 +6,10 @@ using Plugin.Settings;
 
 namespace PeterService.Services
 {
+    /// <summary>
+    /// The class works with "preferences" on each platform
+    /// Data serializes into string and deserializes as needed object
+    /// </summary>
     public class DataService : IDataService
     {
         const string KEY = "peterservice";
