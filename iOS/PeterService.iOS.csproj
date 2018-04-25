@@ -111,9 +111,6 @@
     <Reference Include="Plugin.Settings">
       <HintPath>..\packages\Xam.Plugins.Settings.2.5.8\lib\Xamarin.iOS10\Plugin.Settings.dll</HintPath>
     </Reference>
-    <Reference Include="MvvmCross.Plugins.Messenger">
-      <HintPath>..\packages\MvvmCross.Plugin.Messenger.5.6.3\lib\Xamarin.iOS10\MvvmCross.Plugins.Messenger.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PeterService\PeterService.csproj">
@@ -129,6 +126,7 @@
     <Folder Include="Resources\" />
     <Folder Include="Views\" />
     <Folder Include="Views\HistoryView\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -159,7 +157,7 @@
     <Compile Include="Views\HistoryView\HistoryView.designer.cs">
       <DependentUpon>HistoryView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
+    <Compile Include="Services\DialogService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

@@ -5,7 +5,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
-using MvvmCross.Plugins.Messenger;
 using PeterService.Models;
 using PeterService.Services;
 
@@ -19,7 +18,8 @@ namespace PeterService.ViewModels
         readonly IMvxNavigationService _navigationService;
         readonly IApiService _apiService;
         readonly IDataService _dataService;
-        readonly IMvxMessenger _messenger;
+        readonly IDialogService _dialogService;
+
         List<LangDirectionModel> _langOptions;
         CancellationTokenSource _apiTokenSource;
 
@@ -59,13 +59,13 @@ namespace PeterService.ViewModels
             IMvxNavigationService navigationService, 
             IApiService apiService, 
             IDataService dataService, 
-            IMvxMessenger messenger
+            IDialogService dialogService
         )
         {
             _navigationService = navigationService;
             _apiService = apiService;
             _dataService = dataService;
-            _messenger = messenger;
+            _dialogService = dialogService;
         }
 
         public async override Task Initialize()
@@ -99,8 +99,13 @@ namespace PeterService.ViewModels
 
         void OpenFromList()
         {
-             if (_langOptions != null && _langOptions.Any())
-                _messenger.Publish(new OpenFromListMessage(this, _langOptions.Select(x => x.Key)));
+            if (_langOptions != null && _langOptions.Any())
+            {
+                _dialogService.ShowListOfItems("Выберите язык оригинала", _langOptions.Select(x => x.Key));
+                _dialogService.ClickedOnItemAction = (lang) => {
+                    LangCodeFrom = lang;
+                };
+            }
         }
 
         void OpenToList()
@@ -109,7 +114,12 @@ namespace PeterService.ViewModels
             {
                 var givenOptions = _langOptions.FirstOrDefault(x => x.Key.ToLower() == LangCodeFrom.ToLower());
                 if (givenOptions != null)
-                    _messenger.Publish(new OpenToListMessage(this, givenOptions.Values));
+                {
+                    _dialogService.ShowListOfItems("Выберите язык перевода", _langOptions.Select(x => x.Key));
+                    _dialogService.ClickedOnItemAction = (lang) => {
+                        LangCodeTo = lang;
+                    };
+                }
             }
         }
 

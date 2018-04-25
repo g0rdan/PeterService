@@ -2,6 +2,9 @@
 using Android.Content;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Support.V7.AppCompat;
+using MvvmCross.Platform;
+using PeterService.Droid.Services;
+using PeterService.Services;
 
 namespace PeterService.Droid
 {
@@ -15,5 +18,11 @@ namespace PeterService.Droid
         {
             return new App();
         }
-    }
+
+		protected override void InitializeFirstChance()
+		{
+            Mvx.RegisterSingleton<IDialogService>(new DialogService());
+            base.InitializeFirstChance();
+		}
+	}
 }
