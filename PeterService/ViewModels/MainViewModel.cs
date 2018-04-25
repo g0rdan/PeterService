@@ -79,26 +79,32 @@ namespace PeterService.ViewModels
             _apiTokenSource = new CancellationTokenSource();
 
             var langDirection = GetLangDirection();
-            if (!string.IsNullOrWhiteSpace(InputText) && !string.IsNullOrWhiteSpace(langDirection))
+
+            if (string.IsNullOrWhiteSpace(InputText))
             {
-                var result = await _apiService.Lookup(InputText, langDirection, _apiTokenSource.Token);
-                if (result.OK)
-                {
-                    // save corrent translate into storage
-                    _dataService.Save(result.Result);
-                    // display the first corrent answer
-                    TranslatedText = result.Result.Definitions?.FirstOrDefault()?.Translates?.FirstOrDefault()?.Text;
-                    if (string.IsNullOrWhiteSpace(TranslatedText))
-                        _dialogService.Alert("Подходящий перевод не найден");
-                }
-                else
-                {
-                    _dialogService.Alert(result.Message);
-                }
+                _dialogService.Alert("Введите слово для перевода");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(langDirection))
+            {
+                _dialogService.Alert("Не выбранно направление перевода");
+                return;
+            }
+             
+            var result = await _apiService.Lookup(InputText, langDirection, _apiTokenSource.Token);
+            if (result.OK)
+            {
+                // save corrent translate into storage
+                _dataService.Save(result.Result);
+                // display the first corrent answer
+                TranslatedText = result.Result.Definitions?.FirstOrDefault()?.Translates?.FirstOrDefault()?.Text;
+                if (string.IsNullOrWhiteSpace(TranslatedText))
+                    _dialogService.Alert("Подходящий перевод не найден");
             }
             else
             {
-                _dialogService.Alert("Введите слово для перевода");
+                _dialogService.Alert(result.Message);
             }
         }
 

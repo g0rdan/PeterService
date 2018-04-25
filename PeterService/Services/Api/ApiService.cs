@@ -41,10 +41,10 @@ namespace PeterService.Services
             catch (Exception ex)
             {
                 _logger.Debug(ex, ex.Message);
-                return new LangsApiResult();
+                return new LangsApiResult { Message = ex.Message };
             }
 
-            return new LangsApiResult();
+            return new LangsApiResult { Message = "Запрос не выполнился" };
         }
 
         public async Task<TranslateApiResult> Lookup(string text, string lang, CancellationToken token = default(CancellationToken))
@@ -64,10 +64,10 @@ namespace PeterService.Services
             catch (Exception ex)
             {
                 _logger.Debug(ex, ex.Message);
-                return new TranslateApiResult();
+                return new TranslateApiResult { Message = ex.Message };
             }
 
-            return new TranslateApiResult();
+            return new TranslateApiResult { Message = "Запрос не выполнился" };
         }
     }
 }
