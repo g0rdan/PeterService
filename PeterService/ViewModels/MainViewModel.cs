@@ -51,8 +51,8 @@ namespace PeterService.ViewModels
         public string LanguageToText { get; set; } = BUTTON_TO_TEMPLATE;
 
         public IMvxAsyncCommand TranslateCommand => new MvxAsyncCommand(Translate);
-        public IMvxCommand OpenFromListCommand => new MvxCommand(OpenFromList);
-        public IMvxCommand OpenToListCommand => new MvxCommand(OpenToList);
+        public IMvxAsyncCommand OpenFromListCommand => new MvxAsyncCommand(OpenFromList);
+        public IMvxAsyncCommand OpenToListCommand => new MvxAsyncCommand(OpenToList);
         public IMvxAsyncCommand OpenHistoryCommand => new MvxAsyncCommand(OpenHistoryViewModel);
 
         public MainViewModel(
@@ -88,7 +88,17 @@ namespace PeterService.ViewModels
                     _dataService.Save(result.Result);
                     // display the first corrent answer
                     TranslatedText = result.Result.Definitions?.FirstOrDefault()?.Translates?.FirstOrDefault()?.Text;
+                    if (string.IsNullOrWhiteSpace(TranslatedText))
+                        _dialogService.Alert("Подходящий перевод не найден");
                 }
+                else
+                {
+                    _dialogService.Alert(result.Message);
+                }
+            }
+            else
+            {
+                _dialogService.Alert("Введите слово для перевода");
             }
         }
 
@@ -97,29 +107,31 @@ namespace PeterService.ViewModels
             await _navigationService.Navigate<HistoryViewModel>();
         }
 
-        void OpenFromList()
+        async Task OpenFromList()
         {
             if (_langOptions != null && _langOptions.Any())
             {
-                _dialogService.ShowListOfItems("Выберите язык оригинала", _langOptions.Select(x => x.Key));
-                _dialogService.ClickedOnItemAction = (lang) => {
-                    LangCodeFrom = lang;
-                };
+                var answer = await _dialogService.ShowListOfItems("Выберите язык оригинала", _langOptions.Select(x => x.Key));
+                if (answer.Ok)
+                    LangCodeFrom = answer.SelectedItem;
             }
         }
 
-        void OpenToList()
+        async Task OpenToList()
         {
             if (!string.IsNullOrWhiteSpace(LangCodeFrom))
             {
                 var givenOptions = _langOptions.FirstOrDefault(x => x.Key.ToLower() == LangCodeFrom.ToLower());
                 if (givenOptions != null)
                 {
-                    _dialogService.ShowListOfItems("Выберите язык перевода", _langOptions.Select(x => x.Key));
-                    _dialogService.ClickedOnItemAction = (lang) => {
-                        LangCodeTo = lang;
-                    };
+                    var answer = await _dialogService.ShowListOfItems("Выберите язык перевода", _langOptions.Select(x => x.Key));
+                    if (answer.Ok)
+                        LangCodeTo = answer.SelectedItem;
                 }
+            }
+            else
+            {
+                _dialogService.Alert("Сначала выберите язык оригинала");
             }
         }
 

@@ -1,17 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace PeterService.Services
 {
     public interface IDialogService
     {
         /// <summary>
-        /// Executes when we're clicking on item in popup window
+        /// Shows a simple alert window
         /// </summary>
-        Action<string> ClickedOnItemAction { get; set; }
+        void Alert(string message, string title = null);
         /// <summary>
         /// Shows the list of items in popup window
         /// </summary>
-        void ShowListOfItems(string title, IEnumerable<string> items);
+        Task<DialogAnswer> ShowListOfItems(string title, IEnumerable<string> items);
+    }
+
+    public class DialogAnswer
+    {
+        public bool Ok { get; set; }
+        public string SelectedItem { get; set; }
+
+        public DialogAnswer()
+        {
+        }
+
+        public DialogAnswer(bool ok, string selectedItem)
+        {
+            Ok = ok;
+            SelectedItem = selectedItem;
+        }
     }
 }
