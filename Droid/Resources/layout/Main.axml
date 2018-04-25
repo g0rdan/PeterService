@@ -1,5 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:layout_gravity="top|left"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="Введите слово для перевода:"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <EditText
+            app:MvxBind="Text InputText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/inputTextField" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_weight="0.5"
+                app:MvxBind="Text LanguageFromText"
+                android:textColor="#4bacf7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                app:MvxBind="Text LanguageToText"
+                style="?android:attr/borderlessButtonStyle"
+                android:textColor="#4bacf7"
+                android:layout_weight="0.5"
+                android:text="Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView
+            android:text="Перевод:"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            app:MvxBind="Text TranslatedText"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <android.support.design.widget.FloatingActionButton
+        app:MvxBind="Click TranslateCommand"
+        app:backgroundTint="@color/material_deep_teal_500"
+        android:id="@+id/fab_add_retailer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="15dp"
+        android:tint="@android:color/white"
+        android:src="@mipmap/ic_translate_white_24dp" />
+</FrameLayout>

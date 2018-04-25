@@ -6,7 +6,7 @@ using MvvmCross.Droid.Support.V7.AppCompat;
 
 namespace PeterService.Droid.Activities
 {
-    [Activity(Label = "PeterService", MainLauncher = true, Icon = "@mipmap/icon")]
+    [Activity(Label = "Translator4000", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : MvxAppCompatActivity<MainViewModel>
     {
         int count = 1;

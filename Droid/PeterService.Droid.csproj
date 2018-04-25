@@ -113,6 +113,12 @@
     <Reference Include="MvvmCross.Plugins.Messenger">
       <HintPath>..\packages\MvvmCross.Plugin.Messenger.5.6.3\lib\MonoAndroid\MvvmCross.Plugins.Messenger.dll</HintPath>
     </Reference>
+    <Reference Include="Plugin.Settings.Abstractions">
+      <HintPath>..\packages\Xam.Plugins.Settings.2.5.8\lib\MonoAndroid10\Plugin.Settings.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings">
+      <HintPath>..\packages\Xam.Plugins.Settings.2.5.8\lib\MonoAndroid10\Plugin.Settings.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PeterService\PeterService.csproj">
@@ -126,6 +132,7 @@
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
+    <Compile Include="Helpers\Settings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -141,6 +148,12 @@
     <AndroidResource Include="Resources\mipmap-xhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_translate_white_24dp.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_translate_white_24dp.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_translate_white_24dp.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_translate_white_24dp.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_translate_white_24dp.png" />
+    <AndroidResource Include="Resources\values\Styles.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Activities\" />
