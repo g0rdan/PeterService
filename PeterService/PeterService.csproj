@@ -38,13 +38,16 @@
     <Compile Include="Models\Api\TranslateApiResult.cs" />
     <Compile Include="Models\Api\BaseApiResult.cs" />
     <Compile Include="Models\Api\LangsApiResult.cs" />
-    <Compile Include="ViewModels\LangDirectionViewModel.cs" />
     <Compile Include="Services\Storage\IDataService.cs" />
     <Compile Include="Models\Data\TranslateModel.cs" />
     <Compile Include="Services\Storage\DataService.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="ViewModels\History\HistoryCellViewModel.cs" />
     <Compile Include="ViewModels\History\HistoryViewModel.cs" />
+    <Compile Include="Models\Data\LangDirectionModel.cs" />
+    <Compile Include="Models\Messages\OpenFromListMessage.cs" />
+    <Compile Include="Models\Messages\OpenToListMessage.cs" />
+    <Compile Include="Models\Messages\BaseListMessage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Platform">
@@ -71,6 +74,9 @@
     <Reference Include="PropertyChanged">
       <HintPath>..\packages\PropertyChanged.Fody.2.2.4.0\lib\netstandard1.0\PropertyChanged.dll</HintPath>
     </Reference>
+    <Reference Include="MvvmCross.Plugins.Messenger">
+      <HintPath>..\packages\MvvmCross.Plugin.Messenger.5.6.3\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.Messenger.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -86,6 +92,7 @@
     <Folder Include="Models\Api\" />
     <Folder Include="Models\Data\" />
     <Folder Include="ViewModels\History\" />
+    <Folder Include="Models\Messages\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Fody.2.2.1.0\build\portable-net+sl+win+wpa+wp\Fody.targets" Condition="Exists('..\packages\Fody.2.2.1.0\build\portable-net+sl+win+wpa+wp\Fody.targets')" />

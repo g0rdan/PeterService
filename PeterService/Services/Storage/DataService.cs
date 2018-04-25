@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
+using PeterService.Models;
 using Plugin.Settings;
 
 namespace PeterService.Services

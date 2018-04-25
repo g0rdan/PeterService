@@ -111,6 +111,9 @@
     <Reference Include="Plugin.Settings">
       <HintPath>..\packages\Xam.Plugins.Settings.2.5.8\lib\Xamarin.iOS10\Plugin.Settings.dll</HintPath>
     </Reference>
+    <Reference Include="MvvmCross.Plugins.Messenger">
+      <HintPath>..\packages\MvvmCross.Plugin.Messenger.5.6.3\lib\Xamarin.iOS10\MvvmCross.Plugins.Messenger.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PeterService\PeterService.csproj">
@@ -130,7 +133,6 @@
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Views\MainView.xib" />
-    <InterfaceDefinition Include="Views\LangDirectionView.xib" />
     <InterfaceDefinition Include="Views\HistoryView\HistoryTableCell.xib" />
     <InterfaceDefinition Include="Views\HistoryView\HistoryView.xib" />
   </ItemGroup>
@@ -148,10 +150,6 @@
     <Compile Include="Setup.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Helpers\Settings.cs" />
-    <Compile Include="Views\LangDirectionView.cs" />
-    <Compile Include="Views\LangDirectionView.designer.cs">
-      <DependentUpon>LangDirectionView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\HistoryView\HistoryTableCell.cs" />
     <Compile Include="Views\HistoryView\HistoryTableCell.designer.cs">
       <DependentUpon>HistoryTableCell.cs</DependentUpon>
@@ -161,6 +159,7 @@
     <Compile Include="Views\HistoryView\HistoryView.designer.cs">
       <DependentUpon>HistoryView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

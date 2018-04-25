@@ -16,7 +16,7 @@ namespace PeterService.iOS.Views
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton DirectionButton { get; set; }
+        UIKit.UIButton FromButton { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -32,13 +32,17 @@ namespace PeterService.iOS.Views
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton ToButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton TranslateButton { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (DirectionButton != null) {
-                DirectionButton.Dispose ();
-                DirectionButton = null;
+            if (FromButton != null) {
+                FromButton.Dispose ();
+                FromButton = null;
             }
 
             if (HistoryButton != null) {
@@ -54,6 +58,11 @@ namespace PeterService.iOS.Views
             if (OutputLabel != null) {
                 OutputLabel.Dispose ();
                 OutputLabel = null;
+            }
+
+            if (ToButton != null) {
+                ToButton.Dispose ();
+                ToButton = null;
             }
 
             if (TranslateButton != null) {
