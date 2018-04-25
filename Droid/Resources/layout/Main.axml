@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
+            android:id="@+id/titleView"
             android:text="Введите слово для перевода:"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
@@ -18,18 +19,20 @@
             app:MvxBind="Text InputText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/inputTextField" />
+            android:id="@+id/inputEditText" />
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
+                android:id="@+id/langFromButton"
                 app:MvxBind="Text LanguageFromText; Click OpenFromListCommand"
                 style="@style/button_style"
                 android:layout_weight="0.5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <Button
+                android:id="@+id/langToButton"
                 app:MvxBind="Text LanguageToText; Click OpenToListCommand"
                 style="@style/button_style"
                 android:layout_weight="0.5"
@@ -42,12 +45,14 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent" />
         <TextView
+            android:id="@+id/translatedTextView"
             app:MvxBind="Text TranslatedText"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="match_parent" />
     </LinearLayout>
     <Button
+        android:id="@+id/historyButton"
         app:MvxBind="Click OpenHistoryCommand"
         android:layout_gravity="bottom|left"
         style="@style/button_style"
@@ -58,7 +63,7 @@
     <android.support.design.widget.FloatingActionButton
         app:MvxBind="Click TranslateCommand"
         app:backgroundTint="@color/material_deep_teal_500"
-        android:id="@+id/fab_add_retailer"
+        android:id="@+id/translateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
