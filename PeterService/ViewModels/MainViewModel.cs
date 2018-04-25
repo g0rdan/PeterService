@@ -24,6 +24,9 @@ namespace PeterService.ViewModels
         CancellationTokenSource _apiTokenSource;
 
         string _langCodeFrom;
+        /// <summary>
+        /// Represents first part of "lang direction" (for example, it's "en" in "en-ru")
+        /// </summary>
         public string LangCodeFrom 
         {
             get { return _langCodeFrom; }
@@ -35,6 +38,9 @@ namespace PeterService.ViewModels
         }
 
         string _langCodeTo;
+        /// <summary>
+        /// Represents second part of "lang direction" (for example, it's "ru" in "en-ru")
+        /// </summary>
         public string LangCodeTo
         {
             get { return _langCodeTo; }

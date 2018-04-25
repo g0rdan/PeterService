@@ -131,7 +131,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Setup.cs" />
-    <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Services\DialogService.cs" />
     <Compile Include="Activities\HistoryActivity.cs" />
   </ItemGroup>

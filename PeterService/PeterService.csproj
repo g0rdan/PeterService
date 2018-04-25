@@ -41,7 +41,6 @@
     <Compile Include="Services\Storage\IDataService.cs" />
     <Compile Include="Models\Data\TranslateModel.cs" />
     <Compile Include="Services\Storage\DataService.cs" />
-    <Compile Include="Helpers\Settings.cs" />
     <Compile Include="ViewModels\History\HistoryCellViewModel.cs" />
     <Compile Include="ViewModels\History\HistoryViewModel.cs" />
     <Compile Include="Models\Data\LangDirectionModel.cs" />
