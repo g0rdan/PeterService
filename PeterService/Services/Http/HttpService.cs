@@ -3,6 +3,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using Plugin.Connectivity;
 
 namespace PeterService.Services
 {
@@ -16,6 +17,8 @@ namespace PeterService.Services
             _logger = logger;
             _client = new HttpClient();
         }
+
+        public bool HasConnection => CrossConnectivity.Current.IsConnected;
 
         public async Task<HttpResponseMessage> Get(string url, CancellationToken token = default(CancellationToken))
         {

@@ -18,6 +18,7 @@ namespace PeterService.UnitTests
         readonly Mock<IApiService> _apiServiceMock;
         readonly Mock<IDataService> _dataServiceMock;
         readonly Mock<IDialogService> _dialogService;
+        readonly Mock<IHttpService> _httpService;
 
         public MainViewModelTests()
         {
@@ -25,6 +26,7 @@ namespace PeterService.UnitTests
             _apiServiceMock = new Mock<IApiService>();
             _dataServiceMock = new Mock<IDataService>();
             _dialogService = new Mock<IDialogService>();
+            _httpService = new Mock<IHttpService>();
 
             _apiServiceMock.Setup(x => x.Lookup(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<CancellationToken>())).ReturnsAsync(new TranslateApiResult
             {
@@ -35,6 +37,8 @@ namespace PeterService.UnitTests
                     Definitions = new List<Definition> { new Definition { Translates = new List<FullTranslate> { new FullTranslate { Text = "испытание" } } } }
                 }
             });
+
+            _httpService.Setup(x => x.HasConnection).Returns(true);
         }
 
         [Test]
@@ -44,7 +48,8 @@ namespace PeterService.UnitTests
                 _navigationServiceMock.Object,
                 _apiServiceMock.Object,
                 _dataServiceMock.Object,
-                _dialogService.Object
+                _dialogService.Object,
+                _httpService.Object
             );
 
             mainVM.InputText = "test";
@@ -61,7 +66,8 @@ namespace PeterService.UnitTests
                 _navigationServiceMock.Object,
                 _apiServiceMock.Object,
                 _dataServiceMock.Object,
-                _dialogService.Object
+                _dialogService.Object,
+                _httpService.Object
             );
 
             mainVM.InputText = "test";
@@ -78,7 +84,8 @@ namespace PeterService.UnitTests
                 _navigationServiceMock.Object,
                 _apiServiceMock.Object,
                 _dataServiceMock.Object,
-                _dialogService.Object
+                _dialogService.Object,
+                _httpService.Object
             );
 
             mainVM.InputText = string.Empty;

@@ -19,6 +19,7 @@ namespace PeterService.ViewModels
         readonly IApiService _apiService;
         readonly IDataService _dataService;
         readonly IDialogService _dialogService;
+        readonly IHttpService _httpService;
 
         List<LangDirectionModel> _langOptions;
         CancellationTokenSource _apiTokenSource;
@@ -65,19 +66,29 @@ namespace PeterService.ViewModels
             IMvxNavigationService navigationService, 
             IApiService apiService, 
             IDataService dataService, 
-            IDialogService dialogService
+            IDialogService dialogService,
+            IHttpService httpService
         )
         {
             _navigationService = navigationService;
             _apiService = apiService;
             _dataService = dataService;
             _dialogService = dialogService;
+            _httpService = httpService;
         }
 
         public async override Task Initialize()
 		{
-            _langOptions = await CreateLangOptions();
-		}
+            if (_httpService.HasConnection)
+            {
+                _langOptions = await CreateLangOptions();
+            }
+            else
+            {
+                _dialogService.Alert("Для работы приложения нужно активное интернет соединение", "Предупреждение");
+            }
+
+        }
 
 		async Task Translate()
         {
