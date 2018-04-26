@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeterService.iOS", "iOS\Pet
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeterService.Droid.UITests", "PeterService.Droid.UITests\PeterService.Droid.UITests.csproj", "{E524CA6C-5FB9-49BE-A67C-2267C64725CA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7E715C66-D897-4DCB-87AD-AFA43D4E01F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeterService.iOS.UITests", "PeterService.iOS.UITests\PeterService.iOS.UITests.csproj", "{62D84242-F24C-4BF4-BD46-E2564C54B9A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,5 +71,21 @@ Global
 		{E524CA6C-5FB9-49BE-A67C-2267C64725CA}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{E524CA6C-5FB9-49BE-A67C-2267C64725CA}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{E524CA6C-5FB9-49BE-A67C-2267C64725CA}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{62D84242-F24C-4BF4-BD46-E2564C54B9A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62D84242-F24C-4BF4-BD46-E2564C54B9A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62D84242-F24C-4BF4-BD46-E2564C54B9A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62D84242-F24C-4BF4-BD46-E2564C54B9A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62D84242-F24C-4BF4-BD46-E2564C54B9A7}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{62D84242-F24C-4BF4-BD46-E2564C54B9A7}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{62D84242-F24C-4BF4-BD46-E2564C54B9A7}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{62D84242-F24C-4BF4-BD46-E2564C54B9A7}.Release|iPhone.Build.0 = Release|Any CPU
+		{62D84242-F24C-4BF4-BD46-E2564C54B9A7}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{62D84242-F24C-4BF4-BD46-E2564C54B9A7}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{62D84242-F24C-4BF4-BD46-E2564C54B9A7}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{62D84242-F24C-4BF4-BD46-E2564C54B9A7}.Debug|iPhone.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E524CA6C-5FB9-49BE-A67C-2267C64725CA} = {7E715C66-D897-4DCB-87AD-AFA43D4E01F3}
+		{62D84242-F24C-4BF4-BD46-E2564C54B9A7} = {7E715C66-D897-4DCB-87AD-AFA43D4E01F3}
 	EndGlobalSection
 EndGlobal
