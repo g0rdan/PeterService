@@ -89,7 +89,6 @@ namespace PeterService.ViewModels
             {
                 _dialogService.Alert("Для работы приложения нужно активное интернет соединение", "Предупреждение");
             }
-
         }
 
 		async Task Translate()
