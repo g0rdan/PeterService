@@ -1,6 +1,7 @@
 ﻿using MvvmCross.Binding.BindingContext;
 using MvvmCross.iOS.Views;
 using PeterService.ViewModels;
+using UIKit;
 
 namespace PeterService.iOS.Views
 {
@@ -15,6 +16,8 @@ namespace PeterService.iOS.Views
             base.ViewDidLoad();
 
             NavigationItem.Title = "Tralslator4000";
+            TranslateLabel.Hidden = true;
+            OutputLabel.Hidden = true;
 
             var set = this.CreateBindingSet<MainView, MainViewModel>();
             set.Bind(InputTextView).To(vm => vm.InputText);
@@ -26,6 +29,42 @@ namespace PeterService.iOS.Views
             set.Bind(HistoryButton).To(vm => vm.OpenHistoryCommand);
             set.Bind(TranslateButton).To(vm => vm.TranslateCommand);
             set.Apply();
+
+            TranslateButton.TouchUpInside += (sender, e) => HideResult();
+            ViewModel.TranslationHasCompleted = ShowResult;
+        }
+
+        void TranslateButton_TouchUpInside(object sender, System.EventArgs e)
+        {
+        }
+
+        void ShowResult()
+        {
+            TranslateLabel.Hidden = false;
+            OutputLabel.Hidden = false;
+
+            UIView.Animate(1, 0, UIViewAnimationOptions.CurveLinear,
+                () => {
+                    TranslateLabel.Alpha = 100f;
+                    OutputLabel.Alpha = 100f;
+                },
+                () => {
+                    // animation complete logic 
+                }
+            );
+        }
+
+        void HideResult()
+        {
+            UIView.Animate(1, 0, UIViewAnimationOptions.CurveLinear,
+                () => {
+                    TranslateLabel.Alpha = 0f;
+                    OutputLabel.Alpha = 0f;
+                },
+                () => {
+                    // animation complete logic 
+                }
+            );
         }
     }
 }

@@ -38,6 +38,10 @@ namespace PeterService.iOS.Views
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton TranslateButton { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel TranslateLabel { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (FromButton != null) {
@@ -68,6 +72,11 @@ namespace PeterService.iOS.Views
             if (TranslateButton != null) {
                 TranslateButton.Dispose ();
                 TranslateButton = null;
+            }
+
+            if (TranslateLabel != null) {
+                TranslateLabel.Dispose ();
+                TranslateLabel = null;
             }
         }
     }
