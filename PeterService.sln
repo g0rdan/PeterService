@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7E715C66
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeterService.iOS.UITests", "PeterService.iOS.UITests\PeterService.iOS.UITests.csproj", "{62D84242-F24C-4BF4-BD46-E2564C54B9A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeterService.UnitTests", "PeterService.UnitTests\PeterService.UnitTests.csproj", "{2510A824-88F9-441B-9EDC-53AC53A63215}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,9 +85,22 @@ Global
 		{62D84242-F24C-4BF4-BD46-E2564C54B9A7}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{62D84242-F24C-4BF4-BD46-E2564C54B9A7}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{62D84242-F24C-4BF4-BD46-E2564C54B9A7}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{2510A824-88F9-441B-9EDC-53AC53A63215}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2510A824-88F9-441B-9EDC-53AC53A63215}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2510A824-88F9-441B-9EDC-53AC53A63215}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2510A824-88F9-441B-9EDC-53AC53A63215}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2510A824-88F9-441B-9EDC-53AC53A63215}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{2510A824-88F9-441B-9EDC-53AC53A63215}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{2510A824-88F9-441B-9EDC-53AC53A63215}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{2510A824-88F9-441B-9EDC-53AC53A63215}.Release|iPhone.Build.0 = Release|Any CPU
+		{2510A824-88F9-441B-9EDC-53AC53A63215}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{2510A824-88F9-441B-9EDC-53AC53A63215}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{2510A824-88F9-441B-9EDC-53AC53A63215}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{2510A824-88F9-441B-9EDC-53AC53A63215}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E524CA6C-5FB9-49BE-A67C-2267C64725CA} = {7E715C66-D897-4DCB-87AD-AFA43D4E01F3}
 		{62D84242-F24C-4BF4-BD46-E2564C54B9A7} = {7E715C66-D897-4DCB-87AD-AFA43D4E01F3}
+		{2510A824-88F9-441B-9EDC-53AC53A63215} = {7E715C66-D897-4DCB-87AD-AFA43D4E01F3}
 	EndGlobalSection
 EndGlobal

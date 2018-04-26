@@ -45,6 +45,8 @@
     <Compile Include="ViewModels\History\HistoryViewModel.cs" />
     <Compile Include="Models\Data\LangDirectionModel.cs" />
     <Compile Include="Services\Dialog\IDialogService.cs" />
+    <Compile Include="Services\Loger\ILogerService.cs" />
+    <Compile Include="Services\Loger\LogerService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Platform">
@@ -87,6 +89,7 @@
     <Folder Include="Models\Data\" />
     <Folder Include="ViewModels\History\" />
     <Folder Include="Services\Dialog\" />
+    <Folder Include="Services\Loger\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Fody.2.2.1.0\build\portable-net+sl+win+wpa+wp\Fody.targets" Condition="Exists('..\packages\Fody.2.2.1.0\build\portable-net+sl+win+wpa+wp\Fody.targets')" />

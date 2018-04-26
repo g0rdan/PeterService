@@ -3,16 +3,15 @@ using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using MvvmCross.Platform.Logging;
 
 namespace PeterService.Services
 {
     public class HttpService : IHttpService
     {
         readonly HttpClient _client;
-        readonly IMvxLog _logger;
+        readonly ILogerService _logger;
 
-        public HttpService(IMvxLog logger)
+        public HttpService(ILogerService logger)
         {
             _logger = logger;
             _client = new HttpClient();
