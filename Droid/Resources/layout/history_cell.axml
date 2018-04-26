@@ -7,7 +7,7 @@
     <TextView
         android:paddingLeft="10dp"
         android:paddingTop="5dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        style="@style/label_view_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:MvxBind="Text Title" />

@@ -8,10 +8,11 @@
     <TextView
         android:text="Последние переводы:"
         android:paddingBottom="@dimen/small_offset"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        style="@style/title_view_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerView
+        android:id="@+id/recycleview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:MvxBind="ItemsSource Items"
