@@ -3532,6 +3532,9 @@ namespace PeterService.Droid
 			// aapt resource value: 0x7f080007
 			public const int abc_text_size_title_material_toolbar = 2131230727;
 			
+			// aapt resource value: 0x7f08008b
+			public const int default_offset = 2131230859;
+			
 			// aapt resource value: 0x7f08006d
 			public const int design_appbar_elevation = 2131230829;
 			
@@ -3726,6 +3729,9 @@ namespace PeterService.Droid
 			
 			// aapt resource value: 0x7f080064
 			public const int notification_top_pad_large_text = 2131230820;
+			
+			// aapt resource value: 0x7f08008c
+			public const int small_offset = 2131230860;
 			
 			static Dimension()
 			{

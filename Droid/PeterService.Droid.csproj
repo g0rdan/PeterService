@@ -162,6 +162,7 @@
     <AndroidResource Include="Resources\values\Styles.xml" />
     <AndroidResource Include="Resources\layout\History.axml" />
     <AndroidResource Include="Resources\layout\history_cell.axml" />
+    <AndroidResource Include="Resources\values\Dimens.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Activities\" />
