@@ -62,6 +62,8 @@ namespace PeterService.ViewModels
         public IMvxAsyncCommand OpenToListCommand => new MvxAsyncCommand(OpenToList);
         public IMvxAsyncCommand OpenHistoryCommand => new MvxAsyncCommand(OpenHistoryViewModel);
 
+        public Action TranslationHasCompleted { get; set; }
+
         public MainViewModel(
             IMvxNavigationService navigationService, 
             IApiService apiService, 
@@ -118,6 +120,8 @@ namespace PeterService.ViewModels
                 TranslatedText = result.Result.Definitions?.FirstOrDefault()?.Translates?.FirstOrDefault()?.Text;
                 if (string.IsNullOrWhiteSpace(TranslatedText))
                     _dialogService.Alert("Подходящий перевод не найден");
+                else
+                    TranslationHasCompleted?.Invoke();
             }
             else
             {
